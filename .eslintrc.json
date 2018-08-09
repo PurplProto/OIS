@@ -1,0 +1,18 @@
+{
+    "extends": "airbnb-base",
+    "rules": {
+        "indent": [ "error", 4 ],
+        "linebreak-style": [ "error", "unix" ],
+        "quotes": [ "error", "double" ],
+        "eqeqeq": [ "error", "smart" ],
+        "strict": "error"
+    },
+    "env": {
+        "browser": true,
+        "commonjs": true
+    },
+    "globals": {
+        "browser": false,
+        "chrome": false
+    }
+}
