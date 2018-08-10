@@ -1,12 +1,7 @@
 /*             WEB PAGE CONTENT             */
 
-/* Element surrounding the image */
-.btn_osi_title {
-	margin-right: 3px;
-}
-
 /* The OSI logo in the button */
-.img_osi_title {
+.img_osi_menu_top {
 	vertical-align: -10px;
 	background: none;
 	margin: 7px 0;
@@ -15,9 +10,20 @@
 	width: 30px;
 }
 
+/* Element surrounding the image */
+.img_osi_menu_lower {
+	margin-right: 3px;
+}
+
 /* The OSI logo in the button (for the weird workshop pages) */
 .img_osi_workshop_bar {
 	vertical-align: middle;
+	padding-bottom: 3px;
+}
+
+/* The link element */
+.osi_link {
+	margin-right: 3px;
 }
 
 /*              POPOUT CONTENT              */
@@ -40,7 +46,7 @@
 }
 
 /* Element specific */
-.ois_body{
+.ois_body {
 	width: 500px;
 	font-size: 90% !important;
 	line-height: 1 !important;
@@ -58,6 +64,16 @@
 	padding-top: 8px;
 }
 
-.ois_ppd_img {
-	padding-top: 8px;
+.osi_fontawesome_size {
+	font-size: 20px;
+}
+
+.osi_button_text_only {
+	background:none!important;
+    border:none;
+    padding:0!important;
+}
+
+.osi_button_text {
+	color: #039be5;
 }

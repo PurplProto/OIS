@@ -11,7 +11,8 @@
                     "array": false,
                     "object": false
             }
-        }]
+        }],
+        "no-plusplus": "off"
     },
     "env": {
         "browser": true,
