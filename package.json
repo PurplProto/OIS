@@ -1,5 +1,5 @@
 {
-  "name": "osi",
+  "name": "ois",
   "version": "1.0.1",
   "description": "OIS was made to handle opening Steam's web browser pages in the Steam desktop client.",
   "main": "./main/openInSteam.js",
