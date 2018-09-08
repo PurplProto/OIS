@@ -1,17 +1,26 @@
 {
   "name": "ois",
-  "version": "1.0.1",
+  "version": "1.2.1",
   "description": "OIS was made to handle opening Steam's web browser pages in the Steam desktop client.",
   "main": "./main/openInSteam.js",
+  "private": true,
   "dependencies": {},
   "devDependencies": {
-    "clean-css": "^4.2.1",
-    "eslint": "^4.19.1",
+    "css-loader": "^1.0.0",
+    "eslint": "^5.5.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0"
+    "eslint-plugin-import": "^2.14.0",
+    "mini-css-extract-plugin": "^0.4.2",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "style-loader": "^0.23.0",
+    "uglifyjs-webpack-plugin": "^1.3.0",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -r dist/ && webpack --config=webpack.config.dev.js && ./package.sh -d",
+    "publish": "rm -r dist/ && webpack --config=webpack.config.prod.js && ./package.sh"
   },
   "repository": {
     "type": "git",

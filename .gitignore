@@ -74,3 +74,4 @@ typings/
 
 # Built versions of this project
 packaged/
+dist/
