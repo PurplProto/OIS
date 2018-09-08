@@ -34,10 +34,7 @@
             "*://store.steampowered.com/app/*"
         ],
         "js": [
-            "main/openInSteam.js"
-        ],
-        "css": [
-            "popup/openInSteam.css"
+            "OpenInSteam/index.js"
         ]
     }],
 
@@ -57,6 +54,6 @@
             "188":  "icons/ois_188.png",
             "250":  "icons/ois_250.png"
         },
-        "default_popup": "popup/popup.html"
+        "default_popup": "OISPopup/Popup.html"
     }
 }

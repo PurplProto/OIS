@@ -1,3 +1,5 @@
+import "./css/OpenInSteam.css";
+
 function addLogo() {
     const logoElements = document.getElementsByClassName("ois_logo_img");
 
