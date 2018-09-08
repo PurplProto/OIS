@@ -14,6 +14,7 @@
         "75":   "icons/ois_75.png",
         "83":   "icons/ois_83.png",
         "125":  "icons/ois_125.png",
+        "128":  "icons/ois_128.png",
         "188":  "icons/ois_188.png",
         "250":  "icons/ois_250.png"
     },
@@ -52,6 +53,7 @@
             "75":   "icons/ois_75.png",
             "83":   "icons/ois_83.png",
             "125":  "icons/ois_125.png",
+            "128":  "icons/ois_128.png",
             "188":  "icons/ois_188.png",
             "250":  "icons/ois_250.png"
         },
