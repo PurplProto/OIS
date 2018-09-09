@@ -1,7 +1,10 @@
+import "./css/OpenInSteam.css";
+
 const pageLocation = window.location;
-const isFirefox = typeof InstallTrigger !== "undefined"; // Firefox 1.0+
+const isFirefox = typeof InstallTrigger !== "undefined";
 const isChrome = typeof !!window.chrome !== "undefined"
-        || typeof !!window.chrome.webstore !== "undefined"; // Chrome 1+
+    || typeof !!window.chrome.webstore !== "undefined";
+
 
 function httpGetAsync(requestUrl, requestCallback) {
     const xmlHttp = new XMLHttpRequest();
@@ -37,7 +40,7 @@ function addOISButton(steamURL, pageId) {
     const otherSiteInfoBar = document.getElementsByClassName("apphub_OtherSiteInfo");
     const workShopInfoBar = document.getElementsByClassName("workshopItemControlCtn");
     const profileInfoBar = document.getElementsByClassName("profile_header_actions");
-    const oisLogo = getExtensionURL("icons/ois_logo.png");
+    const oisLogo = getExtensionURL("../icons/ois_logo.png");
 
     // Prevent attempting to add a button on a non-supported browser
     if (oisLogo == null) {
@@ -165,4 +168,3 @@ function main() {
 }
 
 document.onload = main();
-
