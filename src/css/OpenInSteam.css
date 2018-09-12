@@ -15,15 +15,25 @@
 	margin-right: 3px;
 }
 
-/* The OIS logo in the button (for the weird workshop pages) */
-.img_ois_workshop_bar {
-	vertical-align: middle;
-	padding-bottom: 3px;
-}
-
 /* The link element */
 .ois_link {
 	margin-right: 3px;
+}
+
+.ois_profile_button {
+	position: relative;
+    top: 3px;
+}
+
+.ois_othersite_info_button {
+	border-radius: 2px !important;
+	border: none !important;
+	padding: 1px 10px 1px 10px !important;
+	display: inline-block !important;
+	cursor: pointer !important;
+	text-decoration: none !important;
+	color: #67c1f5 !important;
+	background: rgba( 103, 193, 245, 0.2 ) !important;
 }
 
 /*              POPOUT CONTENT              */

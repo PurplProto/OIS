@@ -1,4 +1,5 @@
 const path = require("path");
+const WebpackShellPlugin = require('webpack-shell-plugin');
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
@@ -13,6 +14,7 @@ module.exports = {
         filename: "[name]/index.js",
         path: path.resolve(__dirname, "dist/"),
     },
+    devtool: "source-map",
     optimization: {
         minimizer: [
             new UglifyJsPlugin({
@@ -26,6 +28,10 @@ module.exports = {
     plugins: [
         new MiniCssExtractPlugin({
             filename: "[name]/index.css",
+        }),
+        new WebpackShellPlugin({
+            onBuildStart:['rm -r dist/'],
+            onBuildExit:['./package.sh -d'],
         }),
     ],
     module: {
