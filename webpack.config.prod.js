@@ -18,7 +18,7 @@ module.exports = {
             new UglifyJsPlugin({
                 cache: true,
                 parallel: true,
-                sourceMap: false,
+                sourceMap: true,
             }),
             new OptimizeCSSAssetsPlugin({}),
         ],
