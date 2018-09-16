@@ -1,4 +1,5 @@
 const path = require("path");
+const WebpackShellPlugin = require("webpack-shell-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
@@ -26,6 +27,10 @@ module.exports = {
     plugins: [
         new MiniCssExtractPlugin({
             filename: "[name]/index.css",
+        }),
+        new WebpackShellPlugin({
+            onBuildStart: ["rm -rf dist/"],
+            onBuildExit: ["./package.sh"],
         }),
     ],
     module: {
