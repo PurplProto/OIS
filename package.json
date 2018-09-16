@@ -19,8 +19,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -r dist/ && webpack --config=webpack.config.dev.js && ./package.sh -d",
-    "publish": "rm -r dist/ && webpack --config=webpack.config.prod.js && ./package.sh"
+    "build": "webpack --config=webpack.config.dev.js",
+    "publish": "webpack --config=webpack.config.prod.js"
   },
   "repository": {
     "type": "git",

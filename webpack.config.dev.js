@@ -1,5 +1,5 @@
 const path = require("path");
-const WebpackShellPlugin = require('webpack-shell-plugin');
+const WebpackShellPlugin = require("webpack-shell-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
@@ -30,8 +30,8 @@ module.exports = {
             filename: "[name]/index.css",
         }),
         new WebpackShellPlugin({
-            onBuildStart:['rm -r dist/'],
-            onBuildExit:['./package.sh -d'],
+            onBuildStart: ["rm -rf dist/"],
+            onBuildExit: ["./package.sh -d"],
         }),
     ],
     module: {
