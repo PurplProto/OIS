@@ -4,7 +4,9 @@
   "description": "OIS was made to handle opening Steam's web browser pages in the Steam desktop client.",
   "main": "./main/openInSteam.js",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "materialize-css": "^1.0.0"
+  },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.3.1",
     "css-loader": "^1.0.0",
@@ -21,8 +23,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config=webpack.config.dev.js",
-    "publish": "webpack --config=webpack.config.prod.js"
+    "build": "./node_modules/webpack/bin/webpack.js --config=webpack.config.dev.js",
+    "publish": "./node_modules/webpack/bin/webpack.js --config=webpack.config.prod.js"
   },
   "repository": {
     "type": "git",
