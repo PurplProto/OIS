@@ -8,7 +8,9 @@
     "materialize-css": "^1.0.0"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.3.1"
+    "@fortawesome/fontawesome-free": "^5.3.1",
+    "@types/typescript": "^2.0.0",
+    "typescript": "^4.5.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
