@@ -2,7 +2,7 @@
   "name": "ois",
   "version": "1.3.1",
   "description": "OIS was made to handle opening Steam's web browser pages in the Steam desktop client.",
-  "main": "./main/openInSteam.js",
+  "main": "./dist/openInSteam.js",
   "private": true,
   "dependencies": {
     "materialize-css": "^1.0.0"
@@ -19,17 +19,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PairedPrototype/OIS.git"
+    "url": "git+https://github.com/PurplProto/OIS.git"
   },
   "keywords": [
     "Steam",
     "Steam Website",
-    "Steam desktop client"
+    "Steam desktop client",
+    "Open In Steam"
   ],
-  "author": "PairedPrototype",
+  "author": "PurplProto",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/PairedPrototype/OIS/issues"
+    "url": "https://github.com/PurplProto/OIS/issues"
   },
-  "homepage": "https://github.com/PairedPrototype/OIS#readme"
+  "homepage": "https://github.com/PurplProto/OIS#readme"
 }
