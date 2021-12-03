@@ -1,9 +1,9 @@
 {
-    "manifest_version": 2,
-    "name": "Open in Steam",
-    "short_name": "OIS",
-    "description": "This extension allows the user to open a Steam website page directly in the Steam client.",
-    "version": "1.3.1",
+    "manifest_version": 3,
+    "name": "Open in Steam(dev)",
+    "short_name": "OIS(dev)",
+    "description": "This extension allows the user to open a Steam website page directly in the Steam client by a click of the buttons provided!",
+    "version": "2.0.0",
     "author": "PurplProto",
     "icons": {
         "15": "icons/ois_15.png",
@@ -23,17 +23,25 @@
                 "*://store.steampowered.com/*"
             ],
             "js": [
-                "OpenInSteam/index.js"
+                "index.js"
             ],
             "css": [
-                "OpenInSteam/index.css"
+                "css/index.css"
             ]
         }
     ],
     "web_accessible_resources": [
-        "icons/*"
+        {
+            "resources": [
+                "icons/*"
+            ],
+            "matches": [
+                "*://steamcommunity.com/*",
+                "*://store.steampowered.com/*"
+            ]
+        }
     ],
-    "browser_action": {
+    "action": {
         "default_icon": {
             "15": "icons/ois_15.png",
             "25": "icons/ois_25.png",
@@ -45,6 +53,6 @@
             "188": "icons/ois_188.png",
             "250": "icons/ois_250.png"
         },
-        "default_popup": "OISPopup/Popup.html"
+        "default_popup": "popup.html"
     }
 }
