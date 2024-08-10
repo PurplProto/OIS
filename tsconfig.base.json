@@ -15,9 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ois/source": ["src/index.ts"],
-      "@purplproto/ois": ["libs/ois/src/index.ts"],
-      "@purplproto/popup": ["apps/popup/src/index.ts"]
+      "@purplproto/ois": ["apps/content-scripts/src/ois.ts"]
     }
   }
 }
