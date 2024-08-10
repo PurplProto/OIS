@@ -1,0 +1,49 @@
+/* Componet snippets */
+.ois_inline {
+  display: inline-block;
+}
+
+.ois_vert-align {
+  vertical-align: middle;
+}
+
+.ois_text_justify {
+  text-align: justify;
+}
+
+.ois_margin-top-bot_auto {
+  margin: auto 0;
+}
+
+/* Element specific */
+.ois_body {
+  width: 500px;
+  font-size: 90% !important;
+  line-height: 1 !important;
+}
+
+.ois_content {
+  padding: 0 20px;
+}
+
+.ois_h3 {
+  padding-left: 10px;
+}
+
+.ois_logo_img {
+  padding-top: 8px;
+}
+
+.ois_fontawesome_size {
+  font-size: 20px;
+}
+
+.ois_button_text_only {
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+}
+
+.ois_button_text {
+  color: #039be5;
+}
