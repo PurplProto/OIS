@@ -1,0 +1,51 @@
+{
+  "name": "content-scripts",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/content-scripts/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/ois/content-scripts",
+        "main": "apps/content-scripts/src/ois.ts",
+        "tsConfig": "apps/content-scripts/tsconfig.app.json",
+        "bundle": true,
+        "thirdParty": true,
+        "deleteOutputPath": true,
+        "assets": [
+          {
+            "glob": "**/*.{css,html}",
+            "input": "apps/content-scripts/src",
+            "output": ""
+          }
+        ]
+      },
+      "defaultConfiguration": "production",
+      "configurations": {
+        "development": {
+          "declaration": false,
+          "platform": "browser",
+          "sourcemap": true
+        },
+        "production": {
+          "declaration": false,
+          "platform": "browser",
+          "sourcemap": false
+        }
+      }
+    },
+    "lint": {
+      "command": "eslint apps/content-scripts/src apps/content-scripts/package.json"
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "coverage/ois"
+      }
+    }
+  }
+}
