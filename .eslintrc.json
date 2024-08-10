@@ -1,41 +1,77 @@
 {
   "$schema": "https://json.schemastore.org/eslintrc.json",
   "root": true,
-  "ignorePatterns": ["!**/*"],
-  "plugins": ["@nx"],
+  "ignorePatterns": [
+    "!**/*"
+  ],
+  "plugins": [
+    "@nx"
+  ],
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nx/typescript"],
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ],
+      "extends": [
+        "plugin:@nx/typescript"
+      ],
       "rules": {
-        "indent": [ "error", 2 ],
-        "linebreak-style": [ "error", "unix" ],
-        "quotes": [ "error", "single" ],
-        "eqeqeq": [ "error", "smart" ],
-        "strict": "error"
+        "indent": [
+          "error",
+          2
+        ],
+        "linebreak-style": [
+          "error",
+          "unix"
+        ],
+        "quotes": [
+          "error",
+          "single"
+        ],
+        "eqeqeq": [
+          "error",
+          "smart"
+        ],
+        "strict": "error",
+        "max-len": [
+          "error",
+          {
+            "code": 140
+          }
+        ]
       },
       "env": {
-          "browser": true,
-          "commonjs": true
+        "browser": true,
+        "commonjs": true
       },
       "globals": {
-          "browser": "readonly",
-          "chrome": "readonly"
+        "browser": "readonly",
+        "chrome": "readonly"
       }
     },
     {
-      "files": ["*.js", "*.jsx"],
-      "extends": ["plugin:@nx/javascript"],
+      "files": [
+        "*.js",
+        "*.jsx"
+      ],
+      "extends": [
+        "plugin:@nx/javascript"
+      ],
       "rules": {}
     },
     {
-      "files": ["*.json"],
+      "files": [
+        "*.json"
+      ],
       "parser": "jsonc-eslint-parser",
       "rules": {
         "@nx/dependency-checks": [
           "error",
           {
-            "ignoredFiles": ["{projectRoot}/vite.config.{js,ts,mjs,mts}"]
+            "ignoredFiles": [
+              "{projectRoot}/vite.config.{js,ts,mjs,mts}"
+            ]
           }
         ]
       }
