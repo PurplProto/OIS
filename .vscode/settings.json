@@ -1,3 +1,5 @@
 {
-    "eslint.enable": true
+    "eslint.enable": true,
+    "eslint.onIgnoredFiles": "warn",
+    "eslint.lintTask.enable": true
 }
