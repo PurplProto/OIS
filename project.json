@@ -2,17 +2,134 @@
   "name": "ois",
   "$schema": "node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "src",
-  "projectType": "library",
+  "projectType": "application",
   "tags": [],
   "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
+    "build-chromium": {
+      "executor": "@nx/js:swc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "dependsOn": [
+        {
+          "target": "clean"
+        },
+        {
+          "target": "copy-assets"
+        }
+      ],
+      "options": {
+        "outputPath": "dist/ois",
+        "main": "./src/index.ts",
+        "tsConfig": "./tsconfig.app.json",
+        "clean": false,
+        "assets": [
+          {
+            "glob": "**/*.{css,html}",
+            "input": "./src",
+            "output": "./src"
+          },
+          {
+            "glob": "**/*",
+            "input": "./src/assets/chromium",
+            "output": "./assets"
+          },
+          {
+            "glob": "manifest.json",
+            "input": "./src",
+            "output": "./"
+          }
+        ]
+      },
+      "defaultConfiguration": "production",
+      "configurations": {
+        "development": {
+          "optimization": false,
+          "sourceMap": true,
+          "swcrc": "./.swcrc.development"
+        },
+        "production": {
+          "optimization": true,
+          "sourceMap": false,
+          "swcrc": "./.swcrc"
+        }
+      }
+    },
+    "build-firefox": {
+      "executor": "@nx/js:swc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "dependsOn": [
+        {
+          "target": "clean"
+        },
+        {
+          "target": "copy-assets"
+        }
+      ],
       "options": {
         "outputPath": "dist/ois",
         "main": "./src/index.ts",
         "tsConfig": "./tsconfig.lib.json",
-        "assets": ["./src/assets"]
+        "clean": false,
+        "assets": [
+          {
+            "glob": "**/*.{css,html}",
+            "input": "./src",
+            "output": "./src"
+          },
+          {
+            "glob": "**/*",
+            "input": "./src/assets/firefox",
+            "output": "./assets"
+          },
+          {
+            "glob": "manifest.json",
+            "input": "./src",
+            "output": "./"
+          }
+        ]
+      },
+      "defaultConfiguration": "production",
+      "configurations": {
+        "development": {
+          "optimization": false,
+          "sourceMap": true,
+          "swcrc": "./.swcrc.development"
+        },
+        "production": {
+          "optimization": true,
+          "sourceMap": false,
+          "swcrc": "./.swcrc"
+        }
+      }
+    },
+    "copy-assets": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "mkdir -p ./dist/ois/src/popup/"
+          },
+          {
+            "command": "cp -r ./node_modules/materialize-css/dist/css/materialize.min.css ./dist/ois/src/popup/materialize.min.css"
+          },
+          {
+            "command": "cp -r ./node_modules/@fortawesome/fontawesome-free/js/all.min.js ./dist/ois/src/popup/fontawesome-all.min.js"
+          }
+        ]
+      }
+    },
+    "clean": {
+      "executor": "nx:run-commands",
+      "parallelism": false,
+      "options": {
+        "commands": [
+          {
+            "command": "rm -rf ./dist"
+          }
+        ]
       }
     },
     "lint": {
@@ -20,7 +137,9 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["{options.reportsDirectory}"],
+      "outputs": [
+        "{options.reportsDirectory}"
+      ],
       "options": {
         "reportsDirectory": "coverage/ois"
       }
