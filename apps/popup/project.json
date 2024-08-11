@@ -10,8 +10,7 @@
       "dependsOn": [
         {
           "target": "build",
-          "projects": "content-scripts",
-          "dependencies": true
+          "projects": "content-scripts"
         }
       ],
       "options": {

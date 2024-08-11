@@ -10,8 +10,7 @@
       "dependsOn": [
         {
           "target": "copy-manifest",
-          "projects": "ois",
-          "dependencies": true
+          "projects": "ois"
         }
       ],
       "options": {
@@ -48,8 +47,7 @@
       "dependsOn": [
         {
           "target": "build",
-          "projects": "popup",
-          "dependencies": true
+          "projects": "popup"
         }
       ],
       "executor": "nx:run-commands",
