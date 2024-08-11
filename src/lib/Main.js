@@ -1,5 +1,5 @@
 import "./css/OpenInSteam.css";
-import Helpers from "./js/Helpers";
+import Helpers from "./Helpers";
 
 
 const pageLocation = window.location;

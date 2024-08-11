@@ -8,7 +8,7 @@ So far, this extension is supported on two browsers - [Chrome](https://chrome.go
 
 ## How to build
 
-1. Clone the repository using `git clone git@github.com:PairedPrototype/OIS.git`.
+1. Clone the repository using `git clone git@github.com:PurplProto/OIS.git`.
 2. Get [Node + npm](https://nodejs.org/en/) at least Node version `8.12.0`.
 3. Open your favorite shell/terminal emulator and run `npm install` to obtain all the require dependencies.
 4. Run `npm run build` to build a debug version of the extension. Or `npm run publish` to build a release version.
