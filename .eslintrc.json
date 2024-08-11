@@ -5,7 +5,13 @@
         "linebreak-style": [ "error", "unix" ],
         "quotes": [ "error", "double" ],
         "eqeqeq": [ "error", "smart" ],
-        "strict": "error"
+        "strict": "error",
+        "prefer-destructuring": ["error", {
+            "AssignmentExpression": {
+                    "array": false,
+                    "object": false
+            }
+        }]
     },
     "env": {
         "browser": true,
