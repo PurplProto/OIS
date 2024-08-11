@@ -1,0 +1,58 @@
+/*             WEB PAGE CONTENT             */
+
+/* Element surrounding the image */
+.btn_osi_title {
+	margin-right: 3px;
+}
+
+/* The image */
+.img_osi_title {
+	vertical-align: -10px;
+	background: none;
+	margin: 7px 0;
+	display: inline-block;
+	height: 16px;
+	width: 30px;
+}
+
+/*              POPOUT CONTENT              */
+
+/* Componet snippets */
+.ois_inline {
+	display: inline-block;
+}
+
+.ois_vert-align {
+	vertical-align: middle;
+}
+
+.ois_text_justify {
+	text-align: justify;
+}
+
+.ois_margin-top-bot_auto {
+	margin: auto 0;
+}
+
+/* Element specific */
+.ois_body{
+	width: 500px;
+	font-size: 90% !important;
+	line-height: 1 !important;
+}
+
+.ois_content {
+	padding: 0 20px;
+}
+
+.ois_h3 {
+	padding-left: 10px;
+}
+
+.ois_logo_img {
+	padding-top: 8px;
+}
+
+.ois_ppd_img {
+	padding-top: 8px;
+}
