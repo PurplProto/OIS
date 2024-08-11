@@ -10,22 +10,25 @@ export type InfoBarDiv = {
 export class Helpers {
   static GetExtensionURL(resource: string): string {
     return Browser.runtime.getURL(resource);
-  };
+  }
 
   static InsertButtonOnPage(
     linkElement: HTMLAnchorElement,
     spanElement: HTMLSpanElement,
     imgElement: HTMLImageElement,
-    parentElement: Element,
+    parentElement: Element
   ): void {
     linkElement.classList.add('ois_link');
 
     spanElement.appendChild(imgElement);
     linkElement.appendChild(spanElement);
     parentElement.insertBefore(linkElement, parentElement.children[2]);
-  };
+  }
 
-  static CreateInfoBarObject(infoBarDiv: HTMLCollectionOf<Element>, positionInDiv: number): InfoBarDiv {
+  static CreateInfoBarObject(
+    infoBarDiv: HTMLCollectionOf<Element>,
+    positionInDiv: number
+  ): InfoBarDiv {
     return {
       topBox: document.createElement('a'),
       topBoxContents: document.createElement('span'),
@@ -39,7 +42,7 @@ export class Helpers {
     logo: string,
     imgClasses: string,
     linkClasses: string,
-    linkHref: string,
+    linkHref: string
   ): InfoBarDiv {
     const infoBar = buttonObject;
 
@@ -49,14 +52,14 @@ export class Helpers {
     infoBar.topBox.href = linkHref;
 
     return infoBar;
-  };
+  }
 
   static BuildButton(
-    parentDiv: { div: HTMLCollectionOf<Element>; index: number; },
+    parentDiv: { div: HTMLCollectionOf<Element>; index: number },
     oisLogo: string,
     steamURL: string,
     pageId: string,
-    elementClasses: { imageClass: string; linkClass: string; }
+    elementClasses: { imageClass: string; linkClass: string }
   ) {
     let infoBar = Helpers.CreateInfoBarObject(parentDiv.div, parentDiv.index);
 
@@ -65,14 +68,14 @@ export class Helpers {
       oisLogo,
       elementClasses.imageClass,
       elementClasses.linkClass,
-      steamURL + pageId,
+      steamURL + pageId
     );
 
     Helpers.InsertButtonOnPage(
       infoBar.topBox,
       infoBar.topBoxContents,
       infoBar.topBoxImg,
-      infoBar.topDiv,
+      infoBar.topDiv
     );
-  };
+  }
 }

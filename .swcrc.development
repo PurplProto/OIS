@@ -1,7 +1,7 @@
 {
   "$schema": "https://swc.rs/schema.json",
   "jsc": {
-    "target": "es2020",
+    "target": "es2017",
     "parser": {
       "syntax": "typescript",
       "decorators": true,
@@ -16,7 +16,8 @@
     "loose": true
   },
   "module": {
-    "type": "commonjs"
+    // "importInterop": "none",
+    "type": "es6"
   },
   "exclude": ["jest.config.ts",".*\\.spec.tsx?$",".*\\.test.tsx?$","./src/jest-setup.ts$","./**/jest-setup.ts$",".*.js$"],
   "sourceMaps": true

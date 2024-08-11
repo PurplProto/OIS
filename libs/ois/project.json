@@ -1,0 +1,65 @@
+{
+  "name": "ois",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/ois/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build-chromium": {
+      "executor": "nx:run-commands",
+      "dependsOn": [
+        {
+          "target": "copy-manifest",
+          "projects": "ois",
+          "dependencies": true
+        }
+      ],
+      "options": {
+        "commands": [
+          {
+            "command": "mkdir -p dist/ois/assets"
+          },
+          {
+            "command": "cp -r libs/ois/src/assets/chromium/* dist/ois/assets"
+          }
+        ]
+      }
+    },
+    "build-firefox": {
+      "executor": "nx:run-commands",
+      "dependsOn": [
+        {
+          "target": "copy-manifest",
+          "projects": "ois"
+        }
+      ],
+      "options": {
+        "commands": [
+          {
+            "command": "mkdir -p dist/ois/assets"
+          },
+          {
+            "command": "cp -r libs/ois/src/assets/firefox/* dist/ois/assets"
+          }
+        ]
+      }
+    },
+    "copy-manifest": {
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": "popup",
+          "dependencies": true
+        }
+      ],
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "cp libs/ois/src/manifest.json dist/ois/manifest.json"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,80 +1,31 @@
 {
-  "$schema": "https://json.schemastore.org/eslintrc.json",
-  "root": true,
-  "ignorePatterns": [
-    "!**/*"
-  ],
-  "plugins": [
-    "@nx"
-  ],
+  "ignorePatterns": ["**/*"],
   "overrides": [
     {
-      "files": [
-        "*.ts",
-        "*.tsx"
-      ],
-      "extends": [
-        "plugin:@nx/typescript"
-      ],
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
-        "indent": [
-          "error",
-          2
-        ],
-        "linebreak-style": [
-          "error",
-          "unix"
-        ],
-        "quotes": [
-          "error",
-          "single"
-        ],
-        "eqeqeq": [
-          "error",
-          "smart"
-        ],
-        "strict": "error",
-        "max-len": [
+        "@nx/enforce-module-boundaries": [
           "error",
           {
-            "code": 140
-          }
-        ]
-      },
-      "env": {
-        "browser": true,
-        "commonjs": true
-      },
-      "globals": {
-        "browser": "readonly",
-        "chrome": "readonly"
-      }
-    },
-    {
-      "files": [
-        "*.js",
-        "*.jsx"
-      ],
-      "extends": [
-        "plugin:@nx/javascript"
-      ],
-      "rules": {}
-    },
-    {
-      "files": [
-        "*.json"
-      ],
-      "parser": "jsonc-eslint-parser",
-      "rules": {
-        "@nx/dependency-checks": [
-          "error",
-          {
-            "ignoredFiles": [
-              "{projectRoot}/vite.config.{js,ts,mjs,mts}"
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": ["*"]
+              }
             ]
           }
         ]
       }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {}
     }
   ]
 }

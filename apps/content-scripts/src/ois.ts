@@ -4,11 +4,17 @@ const pageLocation = window.location;
 
 // Function to add button to right of the page title,
 // passing in the page type so the URL can be set correctly
-function AddOISButton(steamURL, pageId) {
-  const otherSiteInfoBar = document.getElementsByClassName('apphub_OtherSiteInfo');
-  const workShopInfoBar = document.getElementsByClassName('workshopItemControlCtn');
-  const profileInfoBar = document.getElementsByClassName('profile_header_actions');
-  const oisLogo = Helpers.GetExtensionURL('../icons/ois_logo.png');
+function AddOISButton(steamURL: string, pageId: string) {
+  const otherSiteInfoBar = document.getElementsByClassName(
+    'apphub_OtherSiteInfo'
+  );
+  const workShopInfoBar = document.getElementsByClassName(
+    'workshopItemControlCtn'
+  );
+  const profileInfoBar = document.getElementsByClassName(
+    'profile_header_actions'
+  );
+  const oisLogo = Helpers.GetExtensionURL('../assets/icons/ois_logo.png');
 
   // Prevent attempting to add a button on a non-supported browser
   if (oisLogo == null) {
