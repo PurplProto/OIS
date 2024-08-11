@@ -1,12 +1,7 @@
 /*             WEB PAGE CONTENT             */
 
-<<<<<<< HEAD
-/* The OSI logo in the button */
-.img_osi_menu_top {
-=======
 /* The OIS logo in the button */
 .img_ois_menu_top {
->>>>>>> 7ddcf26... Made small changes to the pop up
 	vertical-align: -10px;
 	background: none;
 	margin: 7px 0;
@@ -16,31 +11,18 @@
 }
 
 /* Element surrounding the image */
-<<<<<<< HEAD
-.img_osi_menu_lower {
-	margin-right: 3px;
-}
-
-/* The OSI logo in the button (for the weird workshop pages) */
-.img_osi_workshop_bar {
-=======
 .img_ois_menu_lower {
 	margin-right: 3px;
 }
 
 /* The OIS logo in the button (for the weird workshop pages) */
 .img_ois_workshop_bar {
->>>>>>> 7ddcf26... Made small changes to the pop up
 	vertical-align: middle;
 	padding-bottom: 3px;
 }
 
 /* The link element */
-<<<<<<< HEAD
-.osi_link {
-=======
 .ois_link {
->>>>>>> 7ddcf26... Made small changes to the pop up
 	margin-right: 3px;
 }
 
