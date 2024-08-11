@@ -1,6 +1,5 @@
 #!/bin/bash
 
-set -x
 shopt -s extglob
 
 RED='\033[0;31m'
