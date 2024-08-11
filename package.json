@@ -6,6 +6,7 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.3.1",
     "css-loader": "^1.0.0",
     "eslint": "^5.5.0",
     "eslint-config-airbnb-base": "^13.1.0",
