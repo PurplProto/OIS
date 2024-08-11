@@ -2,48 +2,70 @@
 <html class="osi_body">
     <head>
         <meta charset="UTF-8">
-        
+
         <title>Open in Steam - About</title>
-        
+
         <link rel="stylesheet" href="openInSteam.css" type="text/css">
         <link rel="stylesheet" href="materialize.min.css" type="text/css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+        <script src="popup.js"></script>
+
     </head>
     <body class="ois_body grey darken-4 grey-text">
         <div class="ois_content">
-        
+
             <div class="card-panel grey darken-3 ois_vert-align">
-                <img class="ois_vert-align ois_logo_img" src="/icons/ois48.png" alt="OIS logo"/>
+                <img class="ois_vert-align ois_logo_img" alt="OIS logo"/>
                 <h3 class="ois_h3 ois_inline ois_vert-align">About OIS</h3>
             </div>
-            
+
             <div class="card-panel ois_text_justify grey darken-3">
-                <p>It annoyed me that the Steam website requires you to log in nearly daily (it seems). <br/><br/>
-                There's also no preset buttons to open pages in the Steam client would make life easier for a few of us, so that's where OIS comes into play. <br/><br/>
-                Unfortunately, I cannot get everything to open in the Steam client, for example, Steam forums or app discussion pages (at least I haven't found a way, but if you do know a method, please let me know!).<br/><br/>
-                If you find any bugs, please report them to me with details of it and the page you were on at the time if relevant.
+                <p>
+                    Tired of having to login on the Steam website all the time? This is
+                        where OIS can help you!<br/><br/>
+
+                    I feel the ability to open Steam pages in the Steam app should be
+                        something already on the Steam website. But it isn't, so I wanted
+                        to change that to make all our lives a little bit easier.<br/><br/>
+
+                    Unfortunately, I cannot get everything to open in the Steam client,
+                        for example, Steam forums or app discussion pages (at least I
+                        haven't found a way, but if you do know a method, please let me
+                        know!).<br/><br/>
+
+                    I'm just a guy who loves to write code. I'm only human, so there
+                        will likely be bugs somewhere. If you find any bugs, please report
+                        them to me (preferably on this project's <a href="https://github.com/PairedPrototype/OIS/issues">Github issues page</a>) with
+                        details of it and the page you were on at the time if relevant.
                 </p>
             </div>
-            
+
             <div class="divider black"></div>
-            
+
             <div class="card-panel ois_text_justify grey darken-3">
-                <img class="ois_vert-align ois_logo_img" src="/icons/ois48.png" alt="OIS logo"/>
-                <h3 class="ois_h3 ois_inline ois_vert-align">Contact</h3>
+                <img class="ois_vert-align ois_logo_img" alt="OIS logo"/>
+                <h3 class="ois_h3 ois_inline ois_vert-align">Contact/Links</h3>
             </div>
-            
-            <div class="card-panel ois_text_justify grey darken-3">
-                <p>Email: <a target="_blank" href="mailto:pairedprototype@hotmail.com?Subject=OIS%20bug%20report">pairedprototype@hotmail.com</a><br/><br/>
-                Reddit: <a target="_blank" href="https://www.reddit.com/u/pairedprototype">/u/pairedprototype</a><br/><br/>                
+
+            <div class="card-panel grey darken-3 ois_text_justify">
+                <p>
+                    <i class="osi_fontawesome_size ois_vert-align fab fa-reddit-square"></i>
+                        <a target="_blank" href="https://www.reddit.com/u/pairedprototype">/u/PairedPrototype</a><br/><br/>
+
+                    <i class="osi_fontawesome_size ois_vert-align fab fa-github-square"></i>
+                        <a target="_blank" href="https://github.com/PairedPrototype/OIS">PairedPrototype/OIS</a>
+
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                    If one would be so kind, thanks!:
-                    <input type="hidden" name="cmd" value="_s-xclick">
-                    <input type="hidden" name="hosted_button_id" value="EPVYYPCQZJATE">
-                    <input class="ois_inline ois_vert-align" type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
-                    <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+                        <i class="osi_fontawesome_size ois_vert-align fab fa-cc-paypal"></i>
+                        <button class="osi_button_text_only" type="submit"><span class="osi_button_text">paypal.com/PairedPrototype</span></button>
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="EPVYYPCQZJATE">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
                     </form>
                 </p>
             </div>
-        
+
         </div>
     </body>
 </html>
