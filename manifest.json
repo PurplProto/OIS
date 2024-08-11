@@ -4,7 +4,7 @@
     "name": "Open in Steam",
     "short_name": "OIS",
     "description": "This extension allows the user to open a Steam website page directly in the Steam client.",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "author": "PairedPrototype",
 
     "icons": {
@@ -29,6 +29,7 @@
             "*://steamcommunity.com/id/*",
             "*://steamcommunity.com/profiles/*",
             "*://steamcommunity.com/sharedfiles/filedetails/?id=*",
+            "*://steamcommunity.com/workshop/*",
             "*://store.steampowered.com/app/*"
         ],
         "js": [
