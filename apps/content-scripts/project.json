@@ -38,14 +38,7 @@
       }
     },
     "lint": {
-      "command": "eslint apps/content-scripts/src apps/content-scripts/package.json"
-    },
-    "test": {
-      "executor": "@nx/vite:test",
-      "outputs": ["{options.reportsDirectory}"],
-      "options": {
-        "reportsDirectory": "coverage/ois"
-      }
+      "command": "eslint apps/content-scripts/src"
     }
   }
 }

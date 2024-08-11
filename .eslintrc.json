@@ -1,8 +1,24 @@
 {
-  "ignorePatterns": ["**/*"],
+  "root": true,
+  "ignorePatterns": [
+    "**/*"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@nx"
+  ],
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "files": [
+        "*.ts",
+        "*.tsx",
+        "*.js",
+        "*.jsx"
+      ],
       "rules": {
         "@nx/enforce-module-boundaries": [
           "error",
@@ -12,7 +28,9 @@
             "depConstraints": [
               {
                 "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "onlyDependOnLibsWithTags": [
+                  "*"
+                ]
               }
             ]
           }
@@ -20,11 +38,48 @@
       }
     },
     {
-      "files": ["*.ts", "*.tsx"],
-      "rules": {}
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ],
+      "rules": {
+        "indent": [
+          "error",
+          2
+        ],
+        "linebreak-style": [
+          "error",
+          "unix"
+        ],
+        "quotes": [
+          "error",
+          "single"
+        ],
+        "eqeqeq": [
+          "error",
+          "smart"
+        ],
+        "strict": "error",
+        "max-len": [
+          "error",
+          {
+            "code": 140
+          }
+        ]
+      },
+      "env": {
+        "browser": true
+      },
+      "globals": {
+        "browser": "readonly",
+        "chrome": "readonly"
+      }
     },
     {
-      "files": ["*.js", "*.jsx"],
+      "files": [
+        "*.js",
+        "*.jsx"
+      ],
       "rules": {}
     }
   ]
