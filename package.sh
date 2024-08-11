@@ -20,7 +20,6 @@ REQUIRED_DEPENDECIES=(
 POPUPDIR=dist/OISPopup
 MANIFEST=src/manifest.json
 POPUPHTML=src/Popup.html
-POPUPCSS=src/css/materialize.min.css
 
 COMMON_DIRS=(
     dist/OpenInSteam/*
@@ -81,7 +80,6 @@ mkdir -p $WORKING_DIR/firefox/
 cp $MANIFEST  $WORKING_DIR/chrome/${MANIFEST#src/}
 cp $MANIFEST  $WORKING_DIR/firefox/${MANIFEST#src/}
 cp $POPUPHTML $POPUPDIR/${POPUPHTML#src/}
-cp $POPUPCSS  $POPUPDIR/${POPUPCSS#src/css/}
 
 COMMON_DIRS+=("${POPUPDIR}/*")
 
