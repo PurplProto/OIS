@@ -55,7 +55,6 @@ function AddOISButton(steamURL: string, pageId: string) {
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function main(): any {
   AddOISButton('steam://openurl/', pageLocation.href);
 }
