@@ -1,25 +1,86 @@
 {
-    "extends": "airbnb-base",
-    "rules": {
-        "indent": [ "error", 4 ],
-        "linebreak-style": [ "error", "unix" ],
-        "quotes": [ "error", "double" ],
-        "eqeqeq": [ "error", "smart" ],
+  "root": true,
+  "ignorePatterns": [
+    "**/*"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@nx"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.ts",
+        "*.tsx",
+        "*.js",
+        "*.jsx"
+      ],
+      "rules": {
+        "@nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": [
+                  "*"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ],
+      "rules": {
+        "indent": [
+          "error",
+          2
+        ],
+        "linebreak-style": [
+          "error",
+          "unix"
+        ],
+        "quotes": [
+          "error",
+          "single"
+        ],
+        "eqeqeq": [
+          "error",
+          "smart"
+        ],
         "strict": "error",
-        "prefer-destructuring": ["error", {
-            "AssignmentExpression": {
-                    "array": false,
-                    "object": false
-            }
-        }],
-        "no-plusplus": "off"
+        "max-len": [
+          "error",
+          {
+            "code": 140
+          }
+        ]
+      },
+      "env": {
+        "browser": true
+      },
+      "globals": {
+        "browser": "readonly",
+        "chrome": "readonly"
+      }
     },
-    "env": {
-        "browser": true,
-        "commonjs": true
-    },
-    "globals": {
-        "browser": false,
-        "chrome": false
+    {
+      "files": [
+        "*.js",
+        "*.jsx"
+      ],
+      "rules": {}
     }
+  ]
 }

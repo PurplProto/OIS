@@ -1,0 +1,34 @@
+{
+  "name": "popup",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/popup/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": "content-scripts"
+        }
+      ],
+      "options": {
+        "commands": [
+          {
+            "command": "mkdir -p dist/ois/popup"
+          },
+          {
+            "command": "cp -r apps/popup/src/* dist/ois/popup"
+          },
+          {
+            "command": "cp -r node_modules/materialize-css/dist/css/materialize.min.css dist/ois/popup/materialize.min.css"
+          },
+          {
+            "command": "cp -r node_modules/@fortawesome/fontawesome-free/js/all.min.js dist/ois/popup/fontawesome-all.min.js"
+          }
+        ]
+      }
+    }
+  }
+}
