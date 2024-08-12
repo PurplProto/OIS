@@ -12,7 +12,6 @@
     ],
     "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
-  "nxCloudAccessToken": "NTE4OTc3NWUtOTMzNC00YjU2LThiMzQtYjQzZTk3YzNkZWYzfHJlYWQ=",
   "targetDefaults": {
     "@nx/js:tsc": {
       "cache": true,
