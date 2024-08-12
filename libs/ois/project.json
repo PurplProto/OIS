@@ -7,6 +7,7 @@
   "targets": {
     "build-chromium": {
       "executor": "nx:run-commands",
+      "cache": true,
       "dependsOn": [
         {
           "target": "copy-manifest",
@@ -26,6 +27,7 @@
     },
     "build-firefox": {
       "executor": "nx:run-commands",
+      "cache": true,
       "dependsOn": [
         {
           "target": "copy-manifest",
@@ -44,6 +46,7 @@
       }
     },
     "copy-manifest": {
+      "cache": true,
       "dependsOn": [
         {
           "target": "build",
