@@ -27,6 +27,13 @@
       "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
+    },
+    "lint": {
+      "executor": "@nx/eslint:eslint",
+      "cache": true,
+      "options": {
+        "lintFilePatterns": ["{projectRoot}/**/*.ts"]
+      }
     }
   },
   "plugins": [

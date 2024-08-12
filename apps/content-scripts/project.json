@@ -36,9 +36,6 @@
           "sourcemap": false
         }
       }
-    },
-    "lint": {
-      "command": "eslint apps/content-scripts/src"
     }
   }
 }
