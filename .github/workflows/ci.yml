@@ -29,8 +29,13 @@ jobs:
           node-version: 20
           cache: 'npm'
 
+      # Install dependencies
       - run: npm ci --legacy-peer-deps
+
+      # Set the SHAs of the dependencies in the workspace
       - uses: nrwl/nx-set-shas@v4
+        with:
+          main-branch-name: origin/master
 
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
       # - run: npx nx-cloud record -- echo Hello World
