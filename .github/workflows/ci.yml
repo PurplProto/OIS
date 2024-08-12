@@ -35,7 +35,7 @@ jobs:
       # Set the SHAs of the dependencies in the workspace
       - uses: nrwl/nx-set-shas@v4
         with:
-          main-branch-name: origin/master
+          main-branch-name: master
 
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
       # - run: npx nx-cloud record -- echo Hello World
