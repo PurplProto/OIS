@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "defaultBase": "master",
+  "defaultBase": "origin/master",
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
@@ -12,7 +12,7 @@
     ],
     "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
-  "nxCloudAccessToken": "ODk2NjMwZTItOTI4NC00ODhmLTg5ZTctNTlmYmE0YjhkMmE5fHJlYWQtd3JpdGU=",
+  "nxCloudAccessToken": "NTE4OTc3NWUtOTMzNC00YjU2LThiMzQtYjQzZTk3YzNkZWYzfHJlYWQ=",
   "targetDefaults": {
     "@nx/js:tsc": {
       "cache": true,
@@ -27,6 +27,13 @@
       "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
+    },
+    "lint": {
+      "executor": "@nx/eslint:eslint",
+      "cache": true,
+      "options": {
+        "lintFilePatterns": ["{projectRoot}/**/*.ts"]
+      }
     }
   },
   "plugins": [
