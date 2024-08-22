@@ -1,17 +1,21 @@
 name: CI
 
 on:
+  pull_request:
+  workflow_call:
   push:
     branches:
       - master
-  pull_request:
+
+env:
+  node_version: 20
 
 permissions:
   actions: read
   contents: read
 
 jobs:
-  main:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -21,16 +25,16 @@ jobs:
       # Cache node_modules
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: ${{ env.node_version }}
           cache-dependency-path: package-lock.json
 
       # Cache .nx directory
       - uses: actions/cache@v3
         with:
           path: .nx/cache
-          key: ${{ runner.os }}-node-${{ hashFiles('**/nx.json') }}
+          key: ${{ runner.os }}-node${{ env.node_version }}-${{ hashFiles('**/nx.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-20
+            ${{ runner.os }}-node${{ env.node_version }}
 
       # Install dependencies
       - run: npm ci --legacy-peer-deps

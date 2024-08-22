@@ -1,0 +1,27 @@
+name: Publish
+
+on:
+  push:
+    tags: '*'
+
+jobs:
+  publish:
+    name: Publish OIS
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build
+        uses: ./.github/workflows/ci.yml
+
+      - name: Create zip
+        working-directory: dist/ois
+        run: zip -r ../ois-${{ github.ref_name }}.zip .
+
+      - name: Upload
+        uses: mnao305/chrome-extension-upload@v5.0.0
+        with:
+          file-path: dist/ois-${{ github.ref_name }}.zip
+          extension-id: ${{ vars.WEBSTORE_EXTENSION_ID }}
+          client-id: ${{ secrets.WEBSTORE_CLIENT_ID }}
+          client-secret: ${{ secrets.WEBSTORE_CLIENT_SECRET }}
+          refresh-token: ${{ secrets.WEBSTORE_REFRESH_TOKEN }}
