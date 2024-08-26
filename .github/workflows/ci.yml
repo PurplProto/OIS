@@ -2,18 +2,6 @@ name: CI
 
 on:
   pull_request:
-  workflow_call:
-    inputs:
-      upload_artifact:
-        description: 'Upload artifact'
-        required: false
-        default: false
-        type: boolean
-      artifact_name:
-        description: 'Artifact name'
-        required: false
-        default: 'ois'
-        type: string
   workflow_dispatch:
   push:
     branches:
@@ -53,17 +41,3 @@ jobs:
 
       # Lint, test, and build
       - run: npx nx affected -t lint test build-chromium
-
-      # Zip the build artifact
-      - if: ${{ inputs.upload_artifact == true }}
-        name: Create zip
-        working-directory: dist/ois
-        run: zip -r ../${{ inputs.artifact_name }}.zip .
-
-      # Upload artifact
-      - if: ${{ inputs.upload_artifact == true }}
-        name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: ${{ inputs.artifact_name }}.zip
-          path: dist/${{ inputs.artifact_name }}.zip
