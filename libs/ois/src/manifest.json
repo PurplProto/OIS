@@ -5,7 +5,7 @@
   "description": "An extension to open a Steam website page directly in the Steam client via a simple button",
   "version": "2.0.0",
   "author": "PurplProto",
-  "minimum_chrome_version": "55",
+  "minimum_chrome_version": "88",
   "icons": {
     "15": "assets/icons/ois_15.png",
     "25": "assets/icons/ois_25.png",
