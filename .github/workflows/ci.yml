@@ -41,7 +41,7 @@ jobs:
           cache-dependency-path: package-lock.json
 
       # Cache .nx directory
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         with:
           path: .nx/cache
           key: ${{ runner.os }}-node${{ env.node_version }}-${{ hashFiles('**/nx.json') }}
@@ -55,14 +55,15 @@ jobs:
       - run: npx nx affected -t lint test build-chromium
 
       # Zip the build artifact
-      - if: ${{ github.event.inputs.upload_artifact == true }}
+      - if: ${{ inputs.upload_artifact == true }}
         name: Create zip
         working-directory: dist/ois
-        run: zip -r ../${{ github.event.inputs.artifact_name }}.zip .
+        run: zip -r ../${{ inputs.artifact_name }}.zip .
 
       # Upload artifact
-      - if: ${{ github.event.inputs.upload_artifact == true }}
-        uses: actions/upload-artifact@v2
+      - if: ${{ inputs.upload_artifact == true }}
+        name: Upload artifact
+        uses: actions/upload-artifact@v4
         with:
-          name: ${{ github.event.inputs.artifact_name }}.zip
-          path: dist/${{ github.event.inputs.artifact_name }}.zip
+          name: ${{ inputs.artifact_name }}.zip
+          path: dist/${{ inputs.artifact_name }}.zip
