@@ -3,6 +3,17 @@ name: CI
 on:
   pull_request:
   workflow_call:
+    inputs:
+      upload_artifact:
+        description: 'Upload artifact'
+        required: false
+        default: false
+        type: boolean
+      artifact_name:
+        description: 'Artifact name'
+        required: false
+        default: 'ois'
+        type: string
   workflow_dispatch:
   push:
     branches:
@@ -40,7 +51,18 @@ jobs:
       # Install dependencies
       - run: npm ci --legacy-peer-deps
 
-      # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
-      # - run: npx nx-cloud record -- echo Hello World
-      # Nx Affected runs only tasks affected by the changes in this PR/commit. Learn more: https://nx.dev/ci/features/affected
+      # Lint, test, and build
       - run: npx nx affected -t lint test build-chromium
+
+      # Zip the build artifact
+      - if: ${{ github.event.inputs.upload_artifact == true }}
+        name: Create zip
+        working-directory: dist/ois
+        run: zip -r ../${{ github.event.inputs.artifact_name }}.zip .
+
+      # Upload artifact
+      - if: ${{ github.event.inputs.upload_artifact == true }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ github.event.inputs.artifact_name }}.zip
+          path: dist/${{ github.event.inputs.artifact_name }}.zip

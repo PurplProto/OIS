@@ -5,26 +5,29 @@ on:
     tags: '*'
 
 jobs:
+  build:
+    uses: ./.github/workflows/ci.yml
+    secrets: inherit
+    with:
+      upload_artifact: true
+      artifact_name: "ois-${{ github.ref_name }}"
+
   publish:
     name: Publish OIS
     runs-on: ubuntu-latest
+    needs: build
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Download artifact
+        uses: actions/download-artifact@v2
         with:
-          fetch-depth: 0
-
-      - name: Build
-        uses: ./.github/workflows/ci.yml
-
-      - name: Create zip
-        working-directory: dist/ois
-        run: zip -r ../ois-${{ github.ref_name }}.zip .
+          name: "ois-${{ github.ref_name }}.zip"
+          path: /tmp
 
       - name: Upload
         uses: mnao305/chrome-extension-upload@v5.0.0
         with:
-          file-path: dist/ois-${{ github.ref_name }}.zip
+          file-path: /tmp/ois-${{ github.ref_name }}.zip
           extension-id: ${{ vars.WEBSTORE_EXTENSION_ID }}
           client-id: ${{ secrets.WEBSTORE_CLIENT_ID }}
           client-secret: ${{ secrets.WEBSTORE_CLIENT_SECRET }}
